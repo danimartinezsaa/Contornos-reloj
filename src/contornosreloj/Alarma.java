@@ -5,9 +5,6 @@
  */
 package contornosreloj;
 
-import static contornosreloj.Reloj.hora;
-import java.util.Date;
-
 /**
  *
  * @author dani
@@ -20,29 +17,41 @@ public class Alarma{
     static String horacompleta=horas+":"+minutos;
 
     public Alarma(){
-        hora = new Date();
-        horas=hora.getHours();
-        minutos=hora.getMinutes();
-        segundos=hora.getSeconds();
+        horas=Reloj.getHoras();
+        minutos=Reloj.getMinutos();
+        segundos=Reloj.segundos;
+        horacompleta=horas+":"+minutos;
+        
     }
 
     public static int getHoras(){
         return horas;
     }
 
-    public static void IncrementarHoras(int horas){
-        Alarma.horas++;
+    public static void IncrementarHoras(){
+        if(horas<23)
+            Alarma.horas++;
+        else
+            Alarma.horas=0;
     }
 
     public static int getMinutos(){
         return minutos;
     }
 
-    public static void incrementarMinutos(int minutos){
-        Alarma.minutos++;
+    public static void incrementarMinutos(){
+        if(minutos<59)
+            Alarma.minutos++;
+        else{
+            Alarma.minutos=0;
+            if(horas<23)
+                Alarma.horas++;
+            else
+                Alarma.horas=0;
+        }
     }
 
     public static String getHoracompleta(){
-        return horacompleta;
+        return horas+":"+minutos;
     }   
 }
