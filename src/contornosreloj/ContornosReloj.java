@@ -6,16 +6,10 @@
 package contornosreloj;
 
 import java.awt.Toolkit;
-import java.io.File;
-import java.io.IOException;
 import java.util.TimerTask;
 import java.util.Timer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+
+
 
 /**
  *
@@ -41,6 +35,7 @@ public class ContornosReloj{
             if(Reloj.getHoracompleta().equals(Alarma.getHoracompleta())&&Alarma.activada==true){
                 System.out.println("Alarma");
                 toolkit.beep();
+                Thread.sleep(1000);
             } 
         }
     }
