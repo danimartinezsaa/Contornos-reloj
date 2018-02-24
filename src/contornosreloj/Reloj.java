@@ -6,7 +6,6 @@
 package contornosreloj;
 
 import java.util.Date;
-import javax.swing.JTextField;
 
 /**
  *
@@ -28,16 +27,27 @@ public class Reloj{
         return horas;
     }
 
-    public static void masHoras(int horas){
-        Reloj.horas++;
+    public static void masHoras(){
+        if(horas<23)
+            Reloj.horas++;
+        else
+            Reloj.horas=0;
     }
 
     public static int getMinutos(){
         return minutos;
     }
 
-    public static void masMinutos(int minutos){
-        Reloj.minutos++;
+    public static void masMinutos(){
+        if(minutos<59)
+            Reloj.minutos++;
+        else{
+            Reloj.minutos=0;
+            if(horas<23)
+                Reloj.horas++;
+            else
+                Reloj.horas=0;
+        }
     }
 
     public static String getHoracompleta(){
@@ -45,15 +55,15 @@ public class Reloj{
     }
     
     public static void incrementoHora(){
-        if(segundos<60)
+        if(segundos<59)
             segundos++;
         else if(segundos==60){
             segundos=0;
-            if(minutos<60)
+            if(minutos<59)
                 minutos++;
             else if(minutos==60){
                 minutos=0;
-                if(horas<24){
+                if(horas<23){
                     horas++;
                 }else
                     horas=0;
@@ -62,6 +72,5 @@ public class Reloj{
         }
          horacompleta=horas+":"+minutos;   
     }
-    
-    
+   
 }
