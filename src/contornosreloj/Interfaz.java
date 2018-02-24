@@ -22,8 +22,11 @@ public class Interfaz extends javax.swing.JFrame{
         setVisible(true);
         setLocation(300, 200);
         Font fuente=new Font("Dialog", Font.BOLD, 60);
+        Font fuente_indicador=new Font("Dialog",Font.BOLD,20);
         visualizador.setFont(fuente);
         visualizador.setHorizontalAlignment(JTextField.CENTER);
+        indicador.setFont(fuente_indicador);
+        indicador.setHorizontalAlignment(JTextField.CENTER);
         reloj_o_alarma.setText("Reloj");
     }
 
