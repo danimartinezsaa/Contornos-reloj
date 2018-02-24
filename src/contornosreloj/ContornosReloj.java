@@ -22,9 +22,16 @@ public class ContornosReloj{
         Interfaz ventana=new Interfaz();
         Reloj reloj=new Reloj();
         new ContornosReloj();
-        
+       
         while(encendido==true){
-            Interfaz.mostrarHora(Reloj.getHoracompleta());
+            if(Interfaz.alarma_reloj==true)
+                Interfaz.mostrarHora();
+            else
+                Interfaz.mostrarAlarma();
+            
+            if(Reloj.getHoracompleta().equals(Alarma.getHoracompleta())&&Alarma.activada==true)
+                System.out.println("Alarmaaa!");   
+            
         }
 
     }
@@ -39,13 +46,9 @@ public class ContornosReloj{
         Toolkit toolkit = Toolkit.getDefaultToolkit();
 
         @Override
-        public void run() {
-            
-            
+        public void run() {    
             Reloj.incrementoHora();
-            
-            
-            
+            System.out.println(Reloj.getHoracompleta());
         }
     }
 }
