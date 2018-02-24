@@ -57,11 +57,11 @@ public class Reloj{
     public static void incrementoHora(){
         if(segundos<59)
             segundos++;
-        else if(segundos==60){
+        else if(segundos<=60){
             segundos=0;
             if(minutos<59)
                 minutos++;
-            else if(minutos==60){
+            else if(minutos<=60){
                 minutos=0;
                 if(horas<23){
                     horas++;
@@ -70,7 +70,8 @@ public class Reloj{
             }
         
         }
-         horacompleta=horas+":"+minutos;   
+        horacompleta=horas+":"+minutos;   
+
     }
    
 }
