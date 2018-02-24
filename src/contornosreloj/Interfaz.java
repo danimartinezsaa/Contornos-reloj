@@ -221,7 +221,8 @@ public class Interfaz extends javax.swing.JFrame{
     }//GEN-LAST:event_alarma_onActionPerformed
 
     private void PosponerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PosponerButtonActionPerformed
-        // TODO add your handling code here:
+        for(int i=0;i<2;i++)
+            Alarma.incrementarMinutos();
     }//GEN-LAST:event_PosponerButtonActionPerformed
 
     private void mas_horasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mas_horasActionPerformed
