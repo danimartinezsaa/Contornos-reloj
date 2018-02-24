@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  * @author dani
  */
 public class Interfaz extends javax.swing.JFrame{
-    boolean alarma_reloj=false; //False=alarma  True=reloj
+    static boolean alarma_reloj=true; //False=alarma  True=reloj
     /**
      * Creates new form Interfaz
      */
@@ -214,6 +214,7 @@ public class Interfaz extends javax.swing.JFrame{
 
     private void alarma_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_onActionPerformed
         Alarma.activada=true;
+        indicador.setText(Alarma.indicador);
     }//GEN-LAST:event_alarma_onActionPerformed
 
     private void PosponerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PosponerButtonActionPerformed
@@ -221,15 +222,17 @@ public class Interfaz extends javax.swing.JFrame{
     }//GEN-LAST:event_PosponerButtonActionPerformed
 
     private void mas_horasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mas_horasActionPerformed
-        // TODO add your handling code here:
+        incrementarHoras();
+            
     }//GEN-LAST:event_mas_horasActionPerformed
 
     private void mas_minutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mas_minutosActionPerformed
-        // TODO add your handling code here:
+        incrementarMinutos();
     }//GEN-LAST:event_mas_minutosActionPerformed
 
     private void alarma_ofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_ofActionPerformed
         Alarma.activada=false;
+        indicador.setText(" ");
     }//GEN-LAST:event_alarma_ofActionPerformed
 
     private void visualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizadorActionPerformed
@@ -247,8 +250,11 @@ public class Interfaz extends javax.swing.JFrame{
     }//GEN-LAST:event_ver_relojActionPerformed
 
     private void ver_alarmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_alarmaActionPerformed
+        Alarma alarma;
         reloj_o_alarma.setText("Alarma");
         alarma_reloj=false;
+        if(Alarma.activada==false)
+            alarma=new Alarma();
     }//GEN-LAST:event_ver_alarmaActionPerformed
 
     /**
@@ -288,25 +294,30 @@ public class Interfaz extends javax.swing.JFrame{
 
     }
     
-    public static void mostrarHora(String hora){
-            visualizador.setText(hora);
+    public static void mostrarHora(){
+            visualizador.setText(Reloj.getHoracompleta());
     }
     
-    public static void mostrarAlarma(String hora){
-            visualizador.setText(hora);
+    public static void mostrarAlarma(){
+            visualizador.setText(Alarma.getHoracompleta());
     }
     
-    public static void mostrarAlarmaOn(){
-            indicador.setText("A");
-    }
-    
+
     public static void incrementarHoras(){
-        
+        if(alarma_reloj==true)
+            Reloj.masHoras();
+        else
+            Alarma.IncrementarHoras();
     }
     
     public static void incrementarMinutos(){
-        
+        if(alarma_reloj==true)
+            Reloj.masMinutos();
+        else
+            Alarma.incrementarMinutos();
     }
+    
+
     
     
 
