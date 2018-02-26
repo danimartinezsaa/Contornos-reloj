@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package contornosreloj;
 
 /**
- *
+ *Clase que gestiona la hora de la alarma.
  * @author dani
  */
 public class Alarma{
@@ -15,30 +11,28 @@ public class Alarma{
     
     static int horas,minutos,segundos;
     static String horacompleta=horas+":"+minutos;
-
+/**
+ * Contructor que inicializa la hora de la alarma a la hora del reloj.
+ */
     public Alarma(){
-        horas=Reloj.getHoras();
-        minutos=Reloj.getMinutos();
+        horas=Reloj.horas;
+        minutos=Reloj.minutos;
         segundos=Reloj.segundos;
         horacompleta=horas+":"+minutos;
         
     }
-
-    public static int getHoras(){
-        return horas;
-    }
-
+/**
+ * Método que incrementa el número de la hora.
+ */
     public static void IncrementarHoras(){
         if(horas<23)
             Alarma.horas++;
         else
             Alarma.horas=0;
     }
-
-    public static int getMinutos(){
-        return minutos;
-    }
-
+/**
+ * Método que incrementa el número de los mimutos.
+ */
     public static void incrementarMinutos(){
         if(minutos<59)
             Alarma.minutos++;
@@ -50,7 +44,10 @@ public class Alarma{
                 Alarma.horas=0;
         }
     }
-
+/**
+ * Método que devuelve la hora completa
+ * @return Hora completa.
+ */
     public static String getHoracompleta(){
         return horas+":"+minutos;
     }   
