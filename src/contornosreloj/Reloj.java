@@ -1,32 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package contornosreloj;
 
 import java.util.Date;
 
 /**
- *
+ * Clase que gestiona el Reloj, inicializa e incrementa el valor de tiempo.
  * @author dani
  */
 public class Reloj{
     static Date hora;
     static int horas,minutos,segundos;
     static String horacompleta=horas+":"+minutos;
-
+/**
+ * Contructor que recoje el tiempo del sistema.
+ */
     public Reloj(){
         hora = new Date();
         horas=hora.getHours();
         minutos=hora.getMinutes();
         segundos=hora.getSeconds();
     }
-
-    public static int getHoras(){
-        return horas;
-    }
-
+/**
+ * Incrementa en 1 la hora.
+ */
     public static void masHoras(){
         if(horas<23)
             Reloj.horas++;
@@ -34,10 +30,9 @@ public class Reloj{
             Reloj.horas=0;
     }
 
-    public static int getMinutos(){
-        return minutos;
-    }
-
+/**
+ * Incrementa en 1 los minutos.
+ */
     public static void masMinutos(){
         if(minutos<59)
             Reloj.minutos++;
@@ -49,11 +44,9 @@ public class Reloj{
                 Reloj.horas=0;
         }
     }
-
-    public static String getHoracompleta(){
-        return horacompleta;
-    }
-    
+/**
+ * Incrementa el tiempo del reloj.
+ */
     public static void incrementoHora(){
         if(segundos<59)
             segundos++;
@@ -71,7 +64,5 @@ public class Reloj{
         
         }
         horacompleta=horas+":"+minutos;   
-
-    }
-   
+    } 
 }
