@@ -35,7 +35,7 @@ public class ContornosReloj{
         timer2.schedule(new TicTac2(),0, 1000);
     }
     /**
-     * Clase que se ejecuta en segundo plano para gestionar el incremento del reloj.
+     * Clase que se ejecuta en segundo plano para gestionar el incremento del reloj y refescar la hora del display.
      */
     public class TicTac extends TimerTask {
         @Override
@@ -47,7 +47,9 @@ public class ContornosReloj{
                 Interfaz.mostrarAlarma();
         }
     }
-    
+    /**
+     * Clase que se ejecuta en segundo plano para comprobar alarma.
+     */
     public class TicTac2 extends TimerTask {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         @Override
