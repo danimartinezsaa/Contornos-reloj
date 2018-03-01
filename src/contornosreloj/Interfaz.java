@@ -9,7 +9,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 
 /**
- *
+ *Interfaz que simula el funcionamiento de un reloj digital
  * @author dani
  */
 public class Interfaz extends javax.swing.JFrame{
