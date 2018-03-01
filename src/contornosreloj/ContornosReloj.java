@@ -19,7 +19,6 @@ public class ContornosReloj{
      * @param args 
      */
     public static void main(String[] args){
-        boolean encendido=true;
         Interfaz ventana=new Interfaz();
         Reloj reloj=new Reloj();
         new ContornosReloj();
