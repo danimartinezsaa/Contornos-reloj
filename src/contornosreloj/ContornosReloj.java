@@ -15,7 +15,7 @@ public class ContornosReloj{
     Timer timer,timer2;
     String hora;
     /**
-     * Clase main dónde se instancian el reloj y la alarma, se muestra la hora de ambos y se lanza la alarma
+     * Clase main dónde se instancian el reloj y la alarma.
      * @param args 
      */
     public static void main(String[] args){
