@@ -271,7 +271,6 @@ public class Interfaz extends javax.swing.JFrame{
  */
     private void ver_relojActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_relojActionPerformed
         alarma_reloj=true;
-        Interfaz.mostrarHora();
         reloj_o_alarma.setText("Reloj");
         
     }//GEN-LAST:event_ver_relojActionPerformed
@@ -285,7 +284,6 @@ public class Interfaz extends javax.swing.JFrame{
         alarma_reloj=false;
         if(Alarma.activada==false)
             alarma=new Alarma();
-        Interfaz.mostrarAlarma();
     }//GEN-LAST:event_ver_alarmaActionPerformed
 
     /**
